@@ -8,18 +8,17 @@ import { FormControl } from '@angular/forms';
 })
 export class SuperHeroFilterComponent {
 
+  constructor() {
+    this.filterTerm.valueChanges.subscribe(newValue => this.filterHeroes.emit(newValue));
+  }
+
   public filterTerm: FormControl = new FormControl('');
 
   @Output()
   filterHeroes: EventEmitter<string> = new EventEmitter();
 
-  filterSuperHeroes(): void {
-    this.filterHeroes.emit(this.filterTerm.value);
-  }
-
   resetFilter(): void {
     this.filterTerm.setValue('');
-    this.filterSuperHeroes();
   }
 
 }
