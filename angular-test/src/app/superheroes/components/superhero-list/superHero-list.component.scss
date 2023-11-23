@@ -2,7 +2,7 @@ ul{
   display: grid;
   grid-template-columns: [left] 1fr [content] auto [right] 1fr;
 
-  & li{
+  li{
     list-style: none;
     grid-column-start: content;
   }

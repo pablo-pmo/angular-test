@@ -14,14 +14,14 @@ mat-card{
     border-radius: 1em;
     margin: 0.5em;
 
-    & .hidden-name{
+    .hidden-name{
       &:not(:hover){
         background-color: black;
       }
       cursor: pointer;
     }
 
-    & fa-icon{
+    fa-icon{
       margin-right: 1em;
       &::after{
         content: ' :';
