@@ -1,0 +1,7 @@
+<form (ngSubmit)="resetFilter()">
+  <mat-form-field>
+    <mat-label>Filter name</mat-label>
+    <input type="text" matInput [formControl]="filterTerm" (input)="filterSuperHeroes()">
+  </mat-form-field>
+  <button mat-stroked-button color="warn">Reset</button>
+</form>

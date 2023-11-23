@@ -1,0 +1,16 @@
+<div id="container">
+  <div>
+    <app-superhero-filter (filterHeroes)="onFilterHeroes($event)"></app-superhero-filter>
+    <ul>
+      <li *ngFor="let hero of superHeroes">
+        <app-superhero
+          [superHero]="hero"
+          (deleteSuperHero)="onDeleteSuperHero($event)"
+          (editSuperHero)="onEditSuperHero($event)">
+        </app-superhero>
+      </li>
+    </ul>
+  </div>
+  <!-- <app-superhero-form [superHero]="currentSuperHero" (addHero)="onAddHero($event)"></app-superhero-form> -->
+
+</div>
