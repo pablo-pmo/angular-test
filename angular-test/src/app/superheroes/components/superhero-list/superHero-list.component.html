@@ -1,12 +1,14 @@
 <app-superhero-filter (filterHeroes)="onFilterHeroes($event)"></app-superhero-filter>
 <mat-paginator
-  [length]="100"
-  [pageSize]="10"
-  [pageSizeOptions]="[5, 10, 25, 100]">
+  [length]="superHeroes.length"
+  [pageSize]="pagItems"
+  [pageIndex]="pagStart"
+  [pageSizeOptions]="pagOptions"
+  (page)="changePagination($event)">
 </mat-paginator>
 
 <ul>
-  <li *ngFor="let hero of superHeroes">
+  <li *ngFor="let hero of superHeroes.slice(pagStart * pagItems,pagStart * pagItems + pagItems)">
     <app-superhero
       [superHero]="hero"
       (deleteSuperHero)="onDeleteSuperHero($event)"
