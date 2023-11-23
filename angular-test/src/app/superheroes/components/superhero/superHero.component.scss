@@ -1,31 +1,36 @@
 mat-card{
+  text-align: center;
   border-radius: 1em;
   margin: 1em 0em;
-}
 
-.hidden-name{
-  &:not(:hover){
-    background-color: black;
+  & > mat-card-header{
+    justify-content: center;
   }
-  cursor: pointer;
-}
 
-mat-card-content fa-icon{
-  margin-right: 1em;
-  &::after{
-    content: ' :';
+  & > mat-card-content > div{
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid;
+    border-radius: 1em;
+    margin: 0.5em;
+
+    & .hidden-name{
+      &:not(:hover){
+        background-color: black;
+      }
+      cursor: pointer;
+    }
+
+    & fa-icon{
+      margin-right: 1em;
+      &::after{
+        content: ' :';
+      }
+    }
   }
-}
 
-button {
-  margin-left: 1em;
-  margin-bottom: 0.5em;
-}
-
-div{
-  display: inline-block;
-  padding: 1em;
-  border: 1px solid;
-  border-radius: 1em;
-  margin: 0.5em;
+  & > mat-card-actions{
+    justify-content: center;
+    gap: 1em;
+  }
 }

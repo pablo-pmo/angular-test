@@ -18,9 +18,43 @@ export class SuperHeroesService {
     actualName: 'Bruce Wayne',
     age: 35,
     city: 'Gotham'
+  }, {
+    id: 3,
+    alias: 'Superman',
+    actualName: 'Clark Kent',
+    age: 35,
+    city: 'Metropolis'
+  }, {
+    id: 4,
+    alias: 'Wolverine',
+    actualName: 'Lobito',
+    age: 35,
+    city: 'DC'
+  }, {
+    id: 5,
+    alias: 'Iron Man',
+    actualName: 'Tony Stark',
+    age: 35,
+    city: 'NY'
+  }, {
+    id: 6,
+    alias: 'Captain America',
+    actualName: 'Steve Rogers',
+    age: 35,
+    city: 'MCU'
+  }, {
+    id: 7,
+    alias: 'Doctor Strange',
+    actualName: 'Steve Strange',
+    age: 45,
+    city: 'Multiverse'
+  }, {
+    id: 8,
+    alias: 'Venom',
+    actualName: 'Eddie Brock',
+    age: 25,
+    city: 'SCU'
   },];
-
-  constructor() { }
 
   getSuperHeroes(): SuperHero[] {
     return this.superheroes;
