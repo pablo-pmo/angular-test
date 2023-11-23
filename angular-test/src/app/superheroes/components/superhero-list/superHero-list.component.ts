@@ -32,7 +32,6 @@ export class SuperHeroListComponent {
   }
 
   changePagination(event: PageEvent): void {
-    console.log(event);
     this.pagItems = event.pageSize;
     this.pagStart = event.pageIndex;
   }
@@ -52,6 +51,9 @@ export class SuperHeroListComponent {
     dialogRef.afterClosed().subscribe(res => {
       if (!res) return;
       this.superHeroesService.deleteSuperHero(heroClicked.id);
+
+      if (this.pagStart === 0 || this.pagStart * this.pagItems < this.superHeroes.length) return;
+      this.pagStart--;
     })
   }
 
