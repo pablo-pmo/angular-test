@@ -75,9 +75,8 @@ export class SuperHeroesService {
     return this.superheroes.filter(({ alias }) => alias.toUpperCase().includes(query.toUpperCase()));
   }
 
-  modifySuperHero(id: number, superheroe: SuperHero): void {
-    let currentSuperhero = this.getSuperHeroById(id);
-    currentSuperhero = { ...superheroe }
+  modifySuperHero(superheroe: SuperHero): void {
+    this.superheroes[this.getSuperHeroIndexById(superheroe.id)] = { ...superheroe };
   }
 
   deleteSuperHero(id: number) {

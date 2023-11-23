@@ -1,5 +1,4 @@
-<!-- <form [formGroup]="superHeroForm" (ngSubmit)="clickAdition()"> -->
-  <form>
+<form [formGroup]="superHeroForm" (ngSubmit)="clickAdition()">
   <mat-card>
     <mat-card-header>
       <mat-card-title>SuperHero Form</mat-card-title>
@@ -7,24 +6,23 @@
     <mat-card-content>
       <mat-form-field>
         <mat-label>Alias</mat-label>
-        {{superHero | json}}
-        <!-- <input type="text" matInput formControlName="alias" [(ngModel)]="superHero.alias"> -->
+        <input type="text" matInput formControlName="alias">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Actual Name</mat-label>
-        <!-- <input type="text" matInput formControlName="actualName" [(ngModel)]="superHero.actualName"> -->
+        <input type="text" matInput formControlName="actualName">
       </mat-form-field>
       <mat-form-field>
         <mat-label>City</mat-label>
-        <!-- <input type="text" matInput formControlName="city" [(ngModel)]="superHero.city"> -->
+        <input type="text" matInput formControlName="city">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Age</mat-label>
-        <!-- <input type="number" matInput formControlName="age" [(ngModel)]="superHero.age"> -->
+        <input type="number" matInput formControlName="age">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <!-- <button mat-raised-button color="primary" [disabled]="!superHeroForm.valid">Add</button> -->
+      <button mat-raised-button color="primary" [disabled]="!superHeroForm.valid">Add</button>
     </mat-card-actions>
   </mat-card>
 </form>

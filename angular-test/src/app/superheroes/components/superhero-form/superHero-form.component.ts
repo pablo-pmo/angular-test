@@ -1,6 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+
 import { SuperHero } from '../../interfaces/superHero';
 import { SuperHeroesService } from '../../services/superHeroes.service';
 
@@ -11,22 +14,27 @@ import { SuperHeroesService } from '../../services/superHeroes.service';
 })
 export class SuperHeroFormComponent {
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private superHeroService: SuperHeroesService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private superHeroService: SuperHeroesService,
+    private location: Location
+  ) { }
 
-  public superHero: SuperHero = this.superHeroService.getSuperHeroById(+this.route.snapshot.paramMap.get('id')!)!;
+  public id: number = +this.route.snapshot.paramMap.get('id')!;
 
-  // public superHeroForm: FormGroup = this.formBuilder.group({
-  //   alias: [this.superHero?.alias, Validators.required],
-  //   actualName: [this.superHero?.actualName, Validators.required],
-  //   city: [this.superHero?.city, Validators.required],
-  //   age: [this.superHero?.age, Validators.compose([Validators.required, Validators.min(18)])],
-  // });
+  public superHero: SuperHero = this.superHeroService.getSuperHeroById(this.id)!;
 
-  // @Output()
-  // addHero: EventEmitter<SuperHero> = new EventEmitter();
+  public superHeroForm: FormGroup = this.formBuilder.group({
+    alias: [this.superHero.alias, Validators.required],
+    actualName: [this.superHero.actualName, Validators.required],
+    city: [this.superHero.city, Validators.required],
+    age: [this.superHero.age, Validators.compose([Validators.required, Validators.min(18)])],
+  });
 
-  // clickAdition(): void {
-  //   this.addHero.emit(this.superHero);
-  // }
+  clickAdition(): void {
+    this.superHeroService.modifySuperHero({ id: this.id, ... this.superHeroForm.value });
+    this.location.back();
+  }
 
 }
