@@ -8,11 +8,11 @@ import { SuperHero } from '../../interfaces/superHero';
 import { SuperHeroesService } from '../../services/superHeroes.service';
 
 @Component({
-  selector: 'app-superhero-form',
-  templateUrl: './superHero-form.component.html',
-  styleUrls: ['./superHero-form.component.scss']
+  selector: 'app-superhero-modification',
+  templateUrl: './superHero-modification.component.html',
+  styleUrls: ['./superHero-modification.component.scss']
 })
-export class SuperHeroFormComponent {
+export class SuperHeroModificationComponent {
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,7 +32,7 @@ export class SuperHeroFormComponent {
     age: [this.superHero.age, Validators.compose([Validators.required, Validators.min(18)])],
   });
 
-  addHero(): void {
+  modifyHero(): void {
     this.superHeroService.modifySuperHero({ id: this.id, ... this.superHeroForm.value });
   }
 

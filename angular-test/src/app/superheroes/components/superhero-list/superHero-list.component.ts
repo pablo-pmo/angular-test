@@ -24,8 +24,6 @@ export class SuperHeroListComponent {
 
   public pagItems: number = this.pagOptions[0];
 
-  public currentSuperHero: SuperHero = this.restartCurrentSuperHero();
-
   restartPagination(): void {
     this.pagStart = 0;
     this.pagItems = this.pagOptions[0];
@@ -34,16 +32,6 @@ export class SuperHeroListComponent {
   changePagination(event: PageEvent): void {
     this.pagItems = event.pageSize;
     this.pagStart = event.pageIndex;
-  }
-
-  restartCurrentSuperHero(): SuperHero {
-    return this.currentSuperHero = {
-      id: this.superHeroesService.getLastId(),
-      alias: '',
-      actualName: '',
-      city: '',
-      age: 18
-    }
   }
 
   askDelitionConfirmation(heroClicked: SuperHero): void {
@@ -72,7 +60,6 @@ export class SuperHeroListComponent {
 
   onAddHero(heroAdded: SuperHero): void {
     this.superHeroesService.addSuperHero(heroAdded);
-    this.restartCurrentSuperHero();
   }
 
 }

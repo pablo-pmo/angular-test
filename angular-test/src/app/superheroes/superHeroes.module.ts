@@ -16,8 +16,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SuperHeroComponent } from './components/superhero/superHero.component';
 import { SuperHeroListComponent } from './components/superhero-list/superHero-list.component';
 import { DeletionDialogComponent } from './components/deletion-dialog/deletion-dialog.component';
-import { SuperHeroFormComponent } from './components/superhero-form/superHero-form.component';
+import { SuperHeroModificationComponent } from './components/superhero-modification/superHero-modification.component';
 import { SuperHeroFilterComponent } from './components/superhero-filter/superHero-filter.component';
+import { SuperHeroAdditionComponent } from './components/superhero-addition/superhero-addition.component';
 
 
 
@@ -26,8 +27,9 @@ import { SuperHeroFilterComponent } from './components/superhero-filter/superHer
     SuperHeroComponent,
     SuperHeroListComponent,
     DeletionDialogComponent,
-    SuperHeroFormComponent,
+    SuperHeroModificationComponent,
     SuperHeroFilterComponent,
+    SuperHeroAdditionComponent,
   ],
   imports: [
     CommonModule,
