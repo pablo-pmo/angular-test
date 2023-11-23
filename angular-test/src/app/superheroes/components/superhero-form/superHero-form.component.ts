@@ -32,8 +32,11 @@ export class SuperHeroFormComponent {
     age: [this.superHero.age, Validators.compose([Validators.required, Validators.min(18)])],
   });
 
-  clickAdition(): void {
+  addHero(): void {
     this.superHeroService.modifySuperHero({ id: this.id, ... this.superHeroForm.value });
+  }
+
+  goBack(): void {
     this.location.back();
   }
 
