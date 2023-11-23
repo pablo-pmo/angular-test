@@ -6,50 +6,52 @@ import { SuperHero } from '../interfaces/superHero';
 })
 export class SuperHeroesService {
 
+  private id: number = 0;
+
   private superheroes: SuperHero[] = [{
-    id: 1,
+    id: ++this.id,
     alias: 'Spiderman',
     actualName: 'Peter Parker',
     age: 25,
     city: 'NY'
   }, {
-    id: 2,
+    id: ++this.id,
     alias: 'Batman',
     actualName: 'Bruce Wayne',
     age: 35,
     city: 'Gotham'
   }, {
-    id: 3,
+    id: ++this.id,
     alias: 'Superman',
     actualName: 'Clark Kent',
     age: 35,
     city: 'Metropolis'
   }, {
-    id: 4,
+    id: ++this.id,
     alias: 'Wolverine',
     actualName: 'Lobito',
     age: 35,
     city: 'DC'
   }, {
-    id: 5,
+    id: ++this.id,
     alias: 'Iron Man',
     actualName: 'Tony Stark',
     age: 35,
     city: 'NY'
   }, {
-    id: 6,
+    id: ++this.id,
     alias: 'Captain America',
     actualName: 'Steve Rogers',
     age: 35,
     city: 'MCU'
   }, {
-    id: 7,
+    id: ++this.id,
     alias: 'Doctor Strange',
     actualName: 'Steve Strange',
     age: 45,
     city: 'Multiverse'
   }, {
-    id: 8,
+    id: ++this.id,
     alias: 'Venom',
     actualName: 'Eddie Brock',
     age: 25,
@@ -60,7 +62,7 @@ export class SuperHeroesService {
     return this.superheroes;
   }
 
-  getSuperHeroIndexById(key: number): number {
+  private getSuperHeroIndexById(key: number): number {
     return this.superheroes.findIndex(({ id }) => key === id);
   }
 
@@ -83,7 +85,7 @@ export class SuperHeroesService {
   }
 
   getLastId(): number {
-    return this.superheroes.reduce((max: SuperHero, current: SuperHero) => max.id > current.id ? max : current).id + 1;
+    return this.id++;
   }
 
   addSuperHero(superHero: SuperHero): void {

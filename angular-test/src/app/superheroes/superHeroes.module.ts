@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +33,7 @@ import { SuperHeroFilterComponent } from './components/superhero-filter/superHer
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     MatCardModule,
     MatButtonModule,
     MatTooltipModule,

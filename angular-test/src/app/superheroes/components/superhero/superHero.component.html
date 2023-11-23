@@ -17,9 +17,11 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button  color="accent" (click)="clickEdition()">
-      <fa-icon [icon]="faPenToSquare"></fa-icon>
-    </button>
+    <a routerLink="/edit/{{superHero.id}}">
+      <button mat-icon-button  color="accent" (click)="clickEdition()">
+        <fa-icon [icon]="faPenToSquare"></fa-icon>
+      </button>
+    </a>
     <button mat-icon-button color="warn" (click)="clickDeletion()">
       <fa-icon [icon]="faTrash"></fa-icon>
     </button>

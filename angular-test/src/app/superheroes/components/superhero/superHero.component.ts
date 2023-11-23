@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SuperHero } from '../../interfaces/superHero';
 import { faUserSecret, faCakeCandles, faLocationDot, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { SuperHero } from '../../interfaces/superHero';
 
 
 @Component({
