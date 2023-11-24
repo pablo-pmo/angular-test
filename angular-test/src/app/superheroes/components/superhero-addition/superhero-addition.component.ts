@@ -16,17 +16,15 @@ export class SuperHeroAdditionComponent {
     private location: Location
   ) { }
 
-  public id: number = this.superHeroService.getLastId();
-
   public superHeroForm: FormGroup = this.formBuilder.group({
-    alias: ['Basic Man', Validators.required],
-    actualName: ['John Doe', Validators.required],
-    city: ['NY', Validators.required],
-    age: [18, Validators.compose([Validators.required, Validators.min(18)])],
+    alias: ['', Validators.required],
+    actualName: ['', Validators.required],
+    city: ['', Validators.required],
+    age: [0, Validators.compose([Validators.required, Validators.min(18)])],
   });
 
   addHero(): void {
-    this.superHeroService.addSuperHero({ id: ++this.id, ... this.superHeroForm.value });
+    this.superHeroService.addSuperHero({ id: this.superHeroService.getLastId(), ... this.superHeroForm.value });
   }
 
   goBack(): void {

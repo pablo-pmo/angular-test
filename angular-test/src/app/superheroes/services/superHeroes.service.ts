@@ -84,7 +84,7 @@ export class SuperHeroesService {
   }
 
   getLastId(): number {
-    return this.id;
+    return ++this.id;
   }
 
   addSuperHero(superHero: SuperHero): void {
