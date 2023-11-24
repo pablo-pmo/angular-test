@@ -20,7 +20,6 @@ import { DeletionDialogComponent } from './components/deletion-dialog/deletion-d
 import { SuperHeroModificationComponent } from './components/superhero-modification/superHero-modification.component';
 import { SuperHeroFilterComponent } from './components/superhero-filter/superHero-filter.component';
 import { SuperHeroAdditionComponent } from './components/superhero-addition/superhero-addition.component';
-import { UpperCaseDirective } from './directives/upperCase.directive';
 
 
 
@@ -32,7 +31,6 @@ import { UpperCaseDirective } from './directives/upperCase.directive';
     SuperHeroModificationComponent,
     SuperHeroFilterComponent,
     SuperHeroAdditionComponent,
-    UpperCaseDirective,
   ],
   imports: [
     CommonModule,
