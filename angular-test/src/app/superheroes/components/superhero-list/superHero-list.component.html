@@ -1,11 +1,17 @@
 <app-superhero-filter (filterHeroes)="onFilterHeroes($event)"></app-superhero-filter>
-<mat-paginator
-  [length]="superHeroes.length"
-  [pageSize]="pagItems"
-  [pageIndex]="pagStart"
-  [pageSizeOptions]="pagOptions"
-  (page)="changePagination($event)">
-</mat-paginator>
+
+<mat-toolbar>
+  <a routerLink="/create">
+    <button mat-button color="primary">Add new hero</button>
+  </a>
+  <mat-paginator
+    [length]="superHeroes.length"
+    [pageSize]="pagItems"
+    [pageIndex]="pagStart"
+    [pageSizeOptions]="pagOptions"
+    (page)="changePagination($event)">
+  </mat-paginator>
+</mat-toolbar>
 
 <ul>
   <li *ngFor="let hero of superHeroes.slice(pagStart * pagItems,pagStart * pagItems + pagItems)">

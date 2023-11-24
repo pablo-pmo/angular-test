@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -19,6 +20,7 @@ import { DeletionDialogComponent } from './components/deletion-dialog/deletion-d
 import { SuperHeroModificationComponent } from './components/superhero-modification/superHero-modification.component';
 import { SuperHeroFilterComponent } from './components/superhero-filter/superHero-filter.component';
 import { SuperHeroAdditionComponent } from './components/superhero-addition/superhero-addition.component';
+import { UpperCaseDirective } from './directives/upperCase.directive';
 
 
 
@@ -30,6 +32,7 @@ import { SuperHeroAdditionComponent } from './components/superhero-addition/supe
     SuperHeroModificationComponent,
     SuperHeroFilterComponent,
     SuperHeroAdditionComponent,
+    UpperCaseDirective,
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,7 @@ import { SuperHeroAdditionComponent } from './components/superhero-addition/supe
     MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatToolbarModule,
     FontAwesomeModule
   ],
   exports: [
