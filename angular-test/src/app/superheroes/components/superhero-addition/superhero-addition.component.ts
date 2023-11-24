@@ -24,7 +24,7 @@ export class SuperHeroAdditionComponent {
   });
 
   addHero(): void {
-    this.superHeroService.addSuperHero({ id: this.superHeroService.getLastId(), ... this.superHeroForm.value });
+    this.superHeroService.addSuperHero({ ... this.superHeroForm.value });
   }
 
   goBack(): void {

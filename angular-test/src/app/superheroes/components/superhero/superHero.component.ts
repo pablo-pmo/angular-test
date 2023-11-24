@@ -18,7 +18,6 @@ export class SuperHeroComponent {
 
   @Input()
   public superHero: SuperHero = {
-    id: 1,
     alias: 'Spiderman',
     actualName: 'Peter Parker',
     city: 'NY',

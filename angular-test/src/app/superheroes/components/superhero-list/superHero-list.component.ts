@@ -38,7 +38,7 @@ export class SuperHeroListComponent {
     const dialogRef = this.dialog.open(DeletionDialogComponent, { data: heroClicked.alias });
     dialogRef.afterClosed().subscribe(res => {
       if (!res) return;
-      this.superHeroesService.deleteSuperHero(heroClicked.id);
+      this.superHeroesService.deleteSuperHero(heroClicked.id!);
 
       if (this.pagStart === 0 || this.pagStart * this.pagItems < this.superHeroes.length) return;
       this.pagStart--;
@@ -55,7 +55,7 @@ export class SuperHeroListComponent {
   }
 
   onEditSuperHero(heroClicked: SuperHero): void {
-    this.superHeroesService.getSuperHeroById(heroClicked.id)!.age++;
+    this.superHeroesService.getSuperHeroById(heroClicked.id!)!.age++;
   }
 
   onAddHero(heroAdded: SuperHero): void {

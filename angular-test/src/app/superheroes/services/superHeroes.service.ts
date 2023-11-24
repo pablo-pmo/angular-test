@@ -9,49 +9,49 @@ export class SuperHeroesService {
   private id: number = 0;
 
   private superheroes: SuperHero[] = [{
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Spiderman',
     actualName: 'Peter Parker',
     age: 25,
     city: 'NY'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Batman',
     actualName: 'Bruce Wayne',
     age: 35,
     city: 'Gotham'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Superman',
     actualName: 'Clark Kent',
     age: 35,
     city: 'Metropolis'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Wolverine',
     actualName: 'Lobito',
     age: 35,
     city: 'DC'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Iron Man',
     actualName: 'Tony Stark',
     age: 35,
     city: 'NY'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Captain America',
     actualName: 'Steve Rogers',
     age: 35,
     city: 'MCU'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Doctor Strange',
     actualName: 'Steve Strange',
     age: 45,
     city: 'Multiverse'
   }, {
-    id: ++this.id,
+    id: this.getLastId(),
     alias: 'Venom',
     actualName: 'Eddie Brock',
     age: 25,
@@ -76,18 +76,18 @@ export class SuperHeroesService {
   }
 
   modifySuperHero(superheroe: SuperHero): void {
-    this.superheroes[this.getSuperHeroIndexById(superheroe.id)] = { ...superheroe };
+    this.superheroes[this.getSuperHeroIndexById(superheroe.id!)] = { ...superheroe };
   }
 
   deleteSuperHero(id: number) {
     this.superheroes.splice(this.getSuperHeroIndexById(id), 1);
   }
 
-  getLastId(): number {
+  private getLastId(): number {
     return ++this.id;
   }
 
   addSuperHero(superHero: SuperHero): void {
-    this.superheroes.push(superHero);
+    this.superheroes.push({ id: this.getLastId(), ...superHero });
   }
 }

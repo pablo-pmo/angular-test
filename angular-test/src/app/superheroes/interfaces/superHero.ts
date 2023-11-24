@@ -1,5 +1,5 @@
 export interface SuperHero {
-  id: number,
+  id?: number,
   alias: string,
   actualName: string,
   city: string,
