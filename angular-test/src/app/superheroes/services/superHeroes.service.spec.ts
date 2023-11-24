@@ -87,7 +87,6 @@ describe('SuperHeroesService', () => {
     const superHero = service.getSuperHeroById(1)!;
     const newAlias = 'Just PP';
     superHero.alias = newAlias;
-    console.log(superHero);
     service.modifySuperHero(superHero);
     expect(service.getSuperHeroById(1)?.alias).toEqual(newAlias);
   });

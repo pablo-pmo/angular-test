@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter, Inject } from '@angular/core';
-import { SuperHero } from '../../interfaces/superHero';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
