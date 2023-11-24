@@ -31,11 +31,4 @@ export class SuperHeroComponent {
     this.deleteSuperHero.emit(this.superHero);
   }
 
-  @Output()
-  editSuperHero: EventEmitter<SuperHero> = new EventEmitter();
-
-  clickEdition(): void {
-    this.editSuperHero.emit(this.superHero);
-  }
-
 }

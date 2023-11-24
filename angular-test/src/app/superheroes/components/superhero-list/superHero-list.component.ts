@@ -54,12 +54,4 @@ export class SuperHeroListComponent {
     this.askDelitionConfirmation(heroClicked);
   }
 
-  onEditSuperHero(heroClicked: SuperHero): void {
-    this.superHeroesService.getSuperHeroById(heroClicked.id!)!.age++;
-  }
-
-  onAddHero(heroAdded: SuperHero): void {
-    this.superHeroesService.addSuperHero(heroAdded);
-  }
-
 }

@@ -76,11 +76,15 @@ export class SuperHeroesService {
   }
 
   modifySuperHero(superheroe: SuperHero): void {
-    this.superheroes[this.getSuperHeroIndexById(superheroe.id!)] = { ...superheroe };
+    const index = this.getSuperHeroIndexById(superheroe.id!);
+    if (index === -1) return;
+    this.superheroes[index] = { ...superheroe };
   }
 
   deleteSuperHero(id: number) {
-    this.superheroes.splice(this.getSuperHeroIndexById(id), 1);
+    const index = this.getSuperHeroIndexById(id);
+    if (index === -1) return;
+    this.superheroes.splice(index, 1);
   }
 
   private getLastId(): number {
