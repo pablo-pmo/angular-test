@@ -1,4 +1,4 @@
-import { Injectable, numberAttribute } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SuperHero } from '../interfaces/superHero';
 
 @Injectable({
@@ -78,7 +78,6 @@ export class SuperHeroesService {
   modifySuperHero(superheroe: SuperHero): void {
     const index = this.getSuperHeroIndexById(superheroe.id!);
     if (index === -1) return;
-    // this.superheroes[index] = { ...superheroe };
     this.superheroes.splice(index, 1, { ...superheroe });
   }
 
